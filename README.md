@@ -1,7 +1,7 @@
 # My-CSS-Framework
 
 ## Description
-utility first CSS Framework 이며 sass의 Mixin을 활용한 커스터마이징이 손쉬운 CSS 반응형 프레임워크 입니다.  
+utility first CSS Framework 이며 sass의 Mixin을 활용하여 클래스 생성기(engine)를 만든 커스터마이징이 손쉬운 CSS 반응형 프레임워크 입니다.  
 classname convention 은 tailwindcss 와 유사합니다.
 
 ## Usage
