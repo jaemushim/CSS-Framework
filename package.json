@@ -1,0 +1,12 @@
+{
+  "name": "css-framework",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass sass/index.sass build/css/index.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

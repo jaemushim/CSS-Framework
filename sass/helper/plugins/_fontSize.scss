@@ -1,0 +1,34 @@
+@use "../setting" as *;
+@use "../engine" as *;
+
+// Font-size
+$property-name: 'font-size';
+$has-classNamePrefix: 'text';
+$values: (
+  0: 0,
+  12: 12px,
+  13: 13px,
+  14: 14px,
+  15: 15px,
+  16: 16px,
+  18: 18px,
+  20: 20px,
+  22: 22px,
+  24: 24px,
+  26: 26px,
+  28: 28px,
+  30: 30px,
+  32: 32px,
+  34: 34px,
+  36: 36px,
+  38: 38px,
+  40: 40px,
+);
+$responsive: false;
+@include make-class(
+  $property-name,
+  $has-classNamePrefix,
+  $values,
+  $breakpoints,
+  $responsive
+);

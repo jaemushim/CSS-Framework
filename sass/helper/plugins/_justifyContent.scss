@@ -1,0 +1,19 @@
+@use "../setting" as *;
+@use "../engine" as *;
+
+// Justify Content
+$property-name: 'justify-content';
+$has-classNamePrefix: 'justify';
+$values: (
+  start: flex-start,
+  end: flex-end,
+  center: center,
+  between: space-between,
+);
+
+@include make-class(
+  $property-name,
+  $has-classNamePrefix,
+  $values,
+  $breakpoints
+);

@@ -1,0 +1,14 @@
+@use "../setting" as *;
+@use "../engine" as *;
+
+// float
+$property-name: 'float';
+$has-classNamePrefix: 'f';
+$values: (none, left, right);
+
+@include make-class(
+  $property-name,
+  $has-classNamePrefix,
+  $values,
+  $breakpoints
+);

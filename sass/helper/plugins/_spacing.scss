@@ -1,0 +1,54 @@
+@use "../setting" as *;
+@use "../engine" as *;
+
+// prettier-ignore
+$values: (0, 1, 2, 3, 4, 5, 7, 8, 10,12, 15, 18, 20, 25, 30, 35, 40, 45, 50, 60, 70, 80, 120);
+// prettier-ignore
+$minus-values: (0, 1, 2, 3, 4, 5, 7, 8, 10, 15, 20, 25, 30, 35, 40);
+
+$prefixes: (
+  p: padding,
+  pt: padding-top,
+  pr: padding-right,
+  pb: padding-bottom,
+  pl: padding-left,
+  m: margin,
+  mt: margin-top,
+  mr: margin-right,
+  mb: margin-bottom,
+  ml: margin-left,
+  px: (
+    padding-left,
+    padding-right,
+  ),
+  py: (
+    padding-top,
+    padding-bottom,
+  ),
+  mx: (
+    margin-left,
+    margin-right,
+  ),
+  my: (
+    margin-top,
+    margin-bottom,
+  ),
+);
+
+@include make-spaceClass($values, $prefixes, $breakpoints);
+
+$make-minus: true;
+@include make-spaceClass($minus-values, $prefixes, $breakpoints, $make-minus);
+
+.mx-auto {
+  margin: 0 auto;
+}
+.m-auto {
+  margin: auto;
+}
+.ml-auto {
+  margin-left: auto;
+}
+.mr-auto {
+  margin-left: auto;
+}

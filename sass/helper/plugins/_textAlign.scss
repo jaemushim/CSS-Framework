@@ -1,0 +1,16 @@
+@use "../setting" as *;
+@use "../engine" as *;
+
+// Text align
+$property-name: 'text-align';
+$has-classNamePrefix: 'text';
+$values: (left, center, right);
+$responsive: false;
+
+@include make-class(
+  $property-name,
+  $has-classNamePrefix,
+  $values,
+  $breakpoints,
+  $responsive
+);

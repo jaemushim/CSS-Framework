@@ -1,0 +1,14 @@
+@use "../setting" as *;
+@use "../engine" as *;
+
+// position
+$property-name: 'position';
+$has-classNamePrefix: false;
+$values: (fixed, absolute, relative, sticky, static);
+
+@include make-class(
+  $property-name,
+  $has-classNamePrefix,
+  $values,
+  $breakpoints
+);

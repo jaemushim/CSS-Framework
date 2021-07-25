@@ -1,0 +1,50 @@
+@use "../setting" as *;
+@use "../engine" as *;
+
+// Width
+$property-name: 'width';
+$has-classNamePrefix: 'w';
+$values: (
+  auto: auto,
+  full: 100%,
+  9\/10: 90%,
+  4\/5: 80%,
+  3\/4: 75%,
+  7\/10: 70%,
+  2\/3: 66.66%,
+  3\/5: 60%,
+  1\/2: 50%,
+  11\/20: 55%,
+  9\/20: 45%,
+  2\/5: 40%,
+  1\/3: 33.33%,
+  3\/10: 33.33%,
+  1\/4: 25%,
+  1\/5: 20%,
+  1\/6: 16.66%,
+  3\/20: 15%,
+  1\/7: 14.27%,
+  1\/8: 12.5%,
+  1\/10: 10%,
+  1\/20: 5%,
+);
+@include make-class(
+  $property-name,
+  $has-classNamePrefix,
+  $values,
+  $breakpoints
+);
+
+// Height 설정
+$property-name: 'height';
+$has-classNamePrefix: 'h';
+$values: (
+  auto: auto,
+  full: 100%,
+);
+@include make-class(
+  $property-name,
+  $has-classNamePrefix,
+  $values,
+  $breakpoints
+);

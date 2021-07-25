@@ -1,0 +1,116 @@
+// ★ CLASS GENERATOR ★ (클래스 생성기)
+
+@mixin make-class(
+  $property-name,
+  $has-classNamePrefix,
+  $values,
+  $breakpoints,
+  $responsive: true
+) {
+  $has-classNamePrefix: if(
+    $has-classNamePrefix,
+    #{$has-classNamePrefix}-,
+    null
+  );
+
+  // Generate classic(not responsive) class
+  @each $valuePointer, $value in $values {
+    $value: if($value, #{$value}, #{$valuePointer});
+
+    .#{$has-classNamePrefix}#{$valuePointer} {
+      #{$property-name}: #{$value};
+    }
+  }
+
+  @if ($responsive) {
+    // Generate responsive class
+    @each $breakpoint-name, $breakpoint-value in $breakpoints {
+      @media screen and (min-width: $breakpoint-value) {
+        @each $valuePointer, $value in $values {
+          $value: if($value, #{$value}, #{$valuePointer});
+
+          .#{$breakpoint-name}\:#{$has-classNamePrefix}#{$valuePointer} {
+            #{$property-name}: #{$value};
+          }
+        }
+      }
+    }
+  }
+}
+
+// ONLY FOR MAKING SPACING
+@mixin make-spaceClass($values, $prefixes, $breakpoints, $make-minus: false) {
+  // Generate classic(not responsive) class
+  @each $prefix, $prefix-fullName in $prefixes {
+    @if ($prefix == px or $prefix == py or $prefix == mx or $prefix == my) {
+      @each $value in $values {
+        @if $make-minus {
+          .-#{$prefix}-#{$value} {
+            @each $i in $prefix-fullName {
+              #{$i}: -#{$value}#{'px'};
+            }
+          }
+        } @else {
+          .#{$prefix}-#{$value} {
+            @each $i in $prefix-fullName {
+              #{$i}: #{$value}#{'px'};
+            }
+          }
+        }
+      }
+    } @else {
+      @each $value in $values {
+        @if $make-minus {
+          .-#{$prefix}-#{$value} {
+            @each $i in $prefix-fullName {
+              #{$i}: -#{$value}#{'px'};
+            }
+          }
+        } @else {
+          .#{$prefix}-#{$value} {
+            #{$prefix-fullName}: #{$value}#{'px'};
+          }
+        }
+      }
+    }
+  }
+
+  // Generate responsive class
+  @each $breakpoint-name, $breakpoint-value in $breakpoints {
+    @media screen and (min-width: $breakpoint-value) {
+      @each $prefix, $prefix-fullName in $prefixes {
+        @if ($prefix == px or $prefix == py or $prefix == mx or $prefix == my) {
+          @each $value in $values {
+            @if $make-minus {
+              .#{$breakpoint-name}\:-#{$prefix}-#{$value} {
+                @each $i in $prefix-fullName {
+                  #{$i}: -#{$value}#{'px'};
+                }
+              }
+            } @else {
+              .#{$breakpoint-name}\:#{$prefix}-#{$value} {
+                @each $i in $prefix-fullName {
+                  #{$i}: #{$value}#{'px'};
+                }
+              }
+            }
+          }
+        } @else {
+          @each $value in $values {
+            @if $make-minus {
+              .#{$breakpoint-name}\:-#{$prefix}-#{$value} {
+                @each $i in $prefix-fullName {
+                  #{$i}: -#{$value}#{'px'};
+                }
+              }
+            } @else {
+              .#{$breakpoint-name}\:#{$prefix}-#{$value} {
+                #{$prefix-fullName}: #{$value}#{'px'};
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

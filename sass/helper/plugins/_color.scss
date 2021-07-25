@@ -1,0 +1,32 @@
+@use "../setting" as *;
+@use "../engine" as *;
+
+// Color
+$property-name: 'color';
+$has-classNamePrefix: 'color';
+$values: (
+  '000': #000,
+  222: #222,
+  333: #333,
+  444: #444,
+  555: #555,
+  666: #666,
+  777: #777,
+  999: #999,
+  aaa: #aaa,
+  ccc: #ccc,
+  eee: #eee,
+  fff: #fff,
+  pri: $pri-color,
+  second: $second-color,
+  third: $third-color,
+);
+$responsive: false;
+
+@include make-class(
+  $property-name,
+  $has-classNamePrefix,
+  $values,
+  $breakpoints,
+  $responsive
+);

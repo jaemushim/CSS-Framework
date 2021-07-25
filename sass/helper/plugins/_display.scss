@@ -1,0 +1,14 @@
+@use "../setting" as *;
+@use "../engine" as *;
+
+// display
+$property-name: 'display';
+$has-classNamePrefix: false;
+$values: (block, inline-block, inline, flex, table, table-cell, none);
+
+@include make-class(
+  $property-name,
+  $has-classNamePrefix,
+  $values,
+  $breakpoints
+);

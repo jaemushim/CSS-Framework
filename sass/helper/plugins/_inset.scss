@@ -1,0 +1,115 @@
+@use "../setting" as *;
+@use "../engine" as *;
+
+// positive values
+$values: (
+  0: 0px,
+  5: 5px,
+  8: 8px,
+  15: 15px,
+  20: 20px,
+  25: 25px,
+  30: 30px,
+  100: 100px,
+);
+
+// negative values
+$negative-values: (
+  0: -0px,
+  5: -5px,
+  8: -8px,
+  15: -15px,
+  20: -20px,
+  25: -25px,
+  30: -30px,
+  100: -100px,
+);
+
+// Top
+$has-classNamePrefix: 'top';
+$property-name: 'top';
+@include make-class(
+  $property-name,
+  $has-classNamePrefix,
+  $values,
+  $breakpoints
+);
+
+// Right
+$property-name: 'right';
+$has-classNamePrefix: 'right';
+@include make-class(
+  $property-name,
+  $has-classNamePrefix,
+  $values,
+  $breakpoints
+);
+
+// Bottom
+$property-name: 'bottom';
+$has-classNamePrefix: 'bottom';
+@include make-class(
+  $property-name,
+  $has-classNamePrefix,
+  $values,
+  $breakpoints
+);
+
+// Left
+$property-name: 'left';
+$has-classNamePrefix: 'left';
+@include make-class(
+  $property-name,
+  $has-classNamePrefix,
+  $values,
+  $breakpoints
+);
+
+// Top (minus value)
+$property-name: 'top';
+$has-classNamePrefix: '-top';
+@include make-class(
+  $property-name,
+  $has-classNamePrefix,
+  $negative-values,
+  $breakpoints
+);
+
+// Right (minus value)
+$property-name: 'right';
+$has-classNamePrefix: '-right';
+@include make-class(
+  $property-name,
+  $has-classNamePrefix,
+  $negative-values,
+  $breakpoints
+);
+
+// Bottom (minus value)
+$property-name: 'bottom';
+$has-classNamePrefix: '-bottom';
+@include make-class(
+  $property-name,
+  $has-classNamePrefix,
+  $negative-values,
+  $breakpoints
+);
+
+// Left (minus value)
+$property-name: 'left';
+$has-classNamePrefix: '-left';
+@include make-class(
+  $property-name,
+  $has-classNamePrefix,
+  $negative-values,
+  $breakpoints
+);
+// Bottom (minus value)
+$property-name: 'bottom';
+$has-classNamePrefix: '-bottom';
+@include make-class(
+  $property-name,
+  $has-classNamePrefix,
+  $negative-values,
+  $breakpoints
+);

@@ -1,0 +1,70 @@
+@use "../setting" as *;
+@use "../engine" as *;
+
+// Border
+$property-name: 'border';
+$has-classNamePrefix: 'border';
+$values: (
+  '1-000': 1px solid #000,
+  '1-333': 1px solid #333,
+  '1-ccc': 1px solid #ccc,
+  '1-ddd': 1px solid #ddd,
+  'b-fff': 1px solid #fff,
+  'collapse': collapse,
+);
+$responsive: false;
+@include make-class(
+  $property-name,
+  $has-classNamePrefix,
+  $values,
+  $breakpoints,
+  $responsive
+);
+
+// Top
+$property-name: 'border-top';
+$has-classNamePrefix: 'border-t';
+$responsive: false;
+@include make-class(
+  $property-name,
+  $has-classNamePrefix,
+  $values,
+  $breakpoints,
+  $responsive
+);
+
+// Bottom
+$property-name: 'border-bottom';
+$has-classNamePrefix: 'border-b';
+$responsive: false;
+@include make-class(
+  $property-name,
+  $has-classNamePrefix,
+  $values,
+  $breakpoints,
+  $responsive
+);
+
+// Left
+$property-name: 'border-left';
+$has-classNamePrefix: 'border-l';
+$responsive: false;
+@include make-class(
+  $property-name,
+  $has-classNamePrefix,
+  $values,
+  $breakpoints,
+  $responsive
+);
+
+// Right
+$property-name: 'border-right';
+$has-classNamePrefix: 'border-r';
+$responsive: false;
+@include make-class(
+  $property-name,
+  $has-classNamePrefix,
+  $values,
+  $breakpoints,
+  $responsive
+);

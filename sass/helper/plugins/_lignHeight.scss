@@ -1,0 +1,26 @@
+@use "../setting" as *;
+@use "../engine" as *;
+
+// Line height
+$property-name: 'line-height';
+$has-classNamePrefix: 'lh';
+$values: (
+  0: 0,
+  normal: 1.1,
+  15: 15px,
+  20: 20px,
+  22: 22px,
+  25: 25px,
+  30: 30px,
+  33: 33px,
+  40: 40px,
+);
+$responsive: false;
+
+@include make-class(
+  $property-name,
+  $has-classNamePrefix,
+  $values,
+  $breakpoints,
+  $responsive
+);

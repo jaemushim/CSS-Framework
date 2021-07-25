@@ -1,0 +1,14 @@
+$container-width: 1200px;
+
+// 반응형 브레이크 포인트 설정
+$breakpoints: (
+  sm: 480px,
+  // Medium screen / tablet
+  md: 768px,
+  // Large screen / desktop
+  lg: $container-width,
+);
+
+$pri-color: #123456;
+$second-color: #234567;
+$third-color: #345678;

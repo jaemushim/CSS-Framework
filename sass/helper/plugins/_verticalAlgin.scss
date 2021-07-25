@@ -1,0 +1,16 @@
+@use "../setting" as *;
+@use "../engine" as *;
+
+// display
+$property-name: 'vertical-align';
+$has-classNamePrefix: 'align';
+$values: (middle, inherit, bottom, top);
+$responsive: false;
+
+@include make-class(
+  $property-name,
+  $has-classNamePrefix,
+  $values,
+  $breakpoints,
+  $responsive
+);
