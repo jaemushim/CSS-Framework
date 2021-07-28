@@ -23,7 +23,7 @@ npm run sass
 
 ## Example
 ```html
-<!-- 모바일에서는 text center and 스크린사이즈 640px 이상은 text left(default) -->
+<!-- 모바일에서는 text center / 스크린사이즈 640px 이상은 text left(default) -->
 <div class="text-center sm:text-left"></div>
 ```  
 #### Why?   
